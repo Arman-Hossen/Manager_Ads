@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .ads-form {
+            border: 20px solid red;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .fileinput-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+        .thumbnail {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        #imageContainer {
+            padding: 0; /* Remove padding */
+        }
+        #imageContainer img {
+            width: 100%; /* Make images full width */
+            margin-bottom: 10px; /* Add minimal bottom margin */
+        }
+    </style>
+    <title>Advertisement Form</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Advertisement Form</h2>
+
+    <form id="adForm" class="ads-form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="adOption">Select Ad Option:</label>
+                    <select class="form-control" id="adOption" onchange="showImage()">
+                        <option value="assets/ad1.png">Navbar Ad [ad1.png]</option>
+                        <option value="assets/ad2.png">Middle Part1 Ad(Middle) [ad2.png]</option>
+                        <option value="assets/ad3.png">Middle Part2 Ad(Sidebar Left) [ad3.png]</option>
+                        <option value="assets/ad4.png">Middle Part3 Ad(Sidebar Right) [ad4.png]</option>
+                        <option value="assets/ad5.png">Middle Part5(Sidebar1 Right) [ad5.png]</option>
+                        <option value="assets/ad6.png">Middle Part5(Sidebar2 Right) [ad6.png]</option>
+                        <option value="assets/ad7.png">Article Navbar Ad [ad7.png]</option>
+                        <option value="assets/ad8.png">Navbar Ad(Below Menu Bar) [ad8.png]</option>
+                        <option value="assets/ad10.png">News Details (Sidebar Left Top) [ad10.png]</option>
+                        <option value="assets/ad11.png">News Details (Sidebar Left Below) [ad11.png]</option>
+                        <option value="assets/ad12.png">Sidebar Left Below [ad12.png]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Display selected image -->
+        <div class="row" id="imageContainer">
+            <div class="col-md-4">
+                <img src="" alt="Selected Image" id="selectedImage" class="img-thumbnail">
+            </div>
+        </div>
+
+        <!-- Other form fields can be added here -->
+
+        <button type="submit" class="btn btn-primary mt-3">Submit Ad</button>
+    </form>
+</div>
+
+<!-- JavaScript and Bootstrap JS dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript -->
+<script>
+    function showImage() {
+        const adOption = document.getElementById('adOption');
+        const selectedImage = document.getElementById('selectedImage');
+
+        // Display the selected image
+        selectedImage.src = adOption.value;
+    }
+</script>
+
+</body>
+</html>

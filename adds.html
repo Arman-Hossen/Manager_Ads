@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Change</title>
+</head>
+<body>
+
+<h2>Select an Image:</h2>
+
+<select id="imageSelector" onchange="changeImage()">
+    <option value="default">Select an Image</option>
+    <option value="1">Image 1</option>
+    <option value="2">Image 2</option>
+    <!-- Add more options as needed -->
+</select>
+
+<img src="" id="selectedImage" class="avatar img-thumbnail add-news" alt="Selected Image">
+
+<script>
+    function changeImage() {
+        var selector = document.getElementById('imageSelector');
+        var selectedValue = selector.value;
+        var image = document.getElementById('selectedImage');
+
+        // Set image path based on the selected option value
+        switch (selectedValue) {
+            case '1':
+                image.src = 'assets/ad1.png';
+                break;
+            case '2':
+                image.src = 'assets/ad2.png';
+                break;
+            // Add more cases as needed
+            default:
+                image.src = ''; // Set a default image path or leave it empty
+        }
+    }
+</script>
+
+</body>
+</html>
